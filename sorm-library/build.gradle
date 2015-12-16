@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 ext {
-    PUBLISH_GROUP_ID = 'eu.livotov.labs.android.sorm'
+    PUBLISH_GROUP_ID = 'eu.livotov.labs.android'
     PUBLISH_ARTIFACT_ID = 'sorm'
     PUBLISH_VERSION = '1.0.0'
 }
