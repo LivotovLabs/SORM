@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SORM Example</string>
+    <string name="description">SORM possibilities sample:\nCreate\nRead\nUpdate\nDelete</string>
+</resources>
