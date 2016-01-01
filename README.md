@@ -1,8 +1,8 @@
 # SORM
 
 Simple yet powerful and lightweight ORM library for Android for your projects.
-It was initially developed for internal projects to make life a bit easier, but finally decided to 
-publish it to be available for everyone.
+It was initially developed for internal projects to make our life a bit easier, but lately decided to 
+publish it for everyone.
 
 
 Status
