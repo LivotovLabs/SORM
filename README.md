@@ -8,7 +8,7 @@ publish it for everyone.
 Status
 ===
 
-We're currently in process with new (2.0) major version of this library. Once ready, it will be available here with
+We're currently in process with the new (2.0) major version of this library. Once ready, it will be available here with
 all the documentation and samples.
 
 For version 1.0 please see the bundled demo app as a reference.
