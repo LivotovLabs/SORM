@@ -1,12 +1,17 @@
 # SORM
 
-Simple yet powerful and lightweight ORM library for Android for your projects.
-It was initially developed for internal projects to make our life a bit easier, but lately decided to 
+Simple yet powerful and lightweight ORM library for Android.
+It was initially developed for internal projects to make our life a bit easier, but lately we decided to 
 publish it for everyone.
 
 
 Status
 ===
+
+We're currently in process with new (2.0) major version of this library. Once ready, it will be available here with
+all the documentation and samples.
+
+For version 1.0 please see the bundled demo app as a reference.
 
 - Current version: [ ![Download](https://api.bintray.com/packages/livotovlabs/maven/SORM/images/download.svg) ](https://bintray.com/livotovlabs/maven/SORM/_latestVersion)
 
@@ -33,7 +38,7 @@ Usage
 Documentation
 ===
 
- Documentation is being written, please stay tuned, should be available soon.
+ Documentation is being written as part of the version 2 development, please stay tuned.
 
 
 Contribute
