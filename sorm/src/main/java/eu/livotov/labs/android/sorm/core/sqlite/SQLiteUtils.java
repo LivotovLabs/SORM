@@ -23,6 +23,7 @@ public class SQLiteUtils
     public final static String SQL_TYPE_TEXT = "TEXT";
     public final static String SQL_TYPE_INTEGER = "INTEGER";
     public final static String SQL_TYPE_FLOAT = "FLOAT";
+    public final static String SQL_TYPE_BLOB = "BLOB";
 
     public final static String getAutomaticSQLiteTypeForField(Field f)
     {
@@ -34,6 +35,11 @@ public class SQLiteUtils
         if (typeIsSQLiteFloat(f.getType()))
         {
             return SQL_TYPE_FLOAT;
+        }
+
+        if (typeIsSQLiteBlob(f.getType()))
+        {
+            return SQL_TYPE_BLOB;
         }
 
         return SQL_TYPE_TEXT;
@@ -55,6 +61,11 @@ public class SQLiteUtils
     {
         return (type.equals(Double.class)) || (type.equals(Double.TYPE)) || (type.equals(Float.class)) ||
                 (type.equals(Float.TYPE));
+    }
+
+    private static boolean typeIsSQLiteBlob(Class<?> type)
+    {
+        return type.equals(byte[].class);
     }
 
     public static void loadEntityFieldsFromCursor(final Cursor c, EntityMetadata entity, ViewMetadata view, Object entityData)
@@ -136,14 +147,21 @@ public class SQLiteUtils
                                         }
                                         else
                                         {
-                                            if (fieldType.isEnum())
+                                            if (fieldType.equals(byte[].class))
                                             {
-                                                try
+                                                field.set(entityData, c.getBlob(columnIndex));
+                                            }
+                                            else
+                                            {
+                                                if (fieldType.isEnum())
                                                 {
-                                                    field.set(entityData, Enum.valueOf(fieldType, c.getString(columnIndex)));
-                                                }
-                                                catch (Throwable err)
-                                                {
+                                                    try
+                                                    {
+                                                        field.set(entityData, Enum.valueOf(fieldType, c.getString(columnIndex)));
+                                                    }
+                                                    catch (Throwable err)
+                                                    {
+                                                    }
                                                 }
                                             }
                                         }
@@ -226,13 +244,17 @@ public class SQLiteUtils
                                         }
                                         else
                                         {
-                                            if (fieldType.isEnum())
+                                            if (fieldType.equals(byte[].class))
                                             {
-                                                values.put(fieldName, ((Enum) value).name());
+                                                values.put(fieldName, (byte[]) value);
                                             }
                                             else
                                             {
-                                                values.put(fieldName, value.toString());
+                                                if (fieldType.isEnum()) {
+                                                    values.put(fieldName, ((Enum) value).name());
+                                                } else {
+                                                    values.put(fieldName, value.toString());
+                                                }
                                             }
                                         }
                                     }
