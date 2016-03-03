@@ -1,1 +1,2 @@
 include ':sorm'
+include ':sorm-sample'
