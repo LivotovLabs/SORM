@@ -1,6 +1,7 @@
 .gradle
 gradle-local.properties
 local.properties
+maven.secret.properties
 .idea
 *.iml
 *.jpr

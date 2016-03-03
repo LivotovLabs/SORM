@@ -1,1 +1,1 @@
-include ':sorm-library'
+include ':sorm'
