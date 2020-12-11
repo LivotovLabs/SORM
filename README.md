@@ -1,3 +1,10 @@
+Retirement Notice
+=================
+
+This project is retired and no longer maintained.
+I'm proud the SORM was the very first Hibernate-like ORM library for Android, simple, without boilerplate code and performant enough. It saved a lot of time and lines of code for me and other devs. But now we have better tools from built-in Room to NoSQL ones such as ObjectBox and Realm. 
+
+
 # SORM
 
 Simple yet powerful and lightweight ORM library for Android.
